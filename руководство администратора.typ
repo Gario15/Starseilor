@@ -32,16 +32,17 @@
   set text(weight: "bold", size: 14pt)
   set par(first-line-indent: 0pt, leading: 1.5em, spacing: 12pt)
   
-  let special = it.body in special-headings
-  let heading-body = if special { upper(it.body) } else { it.body }
+  // Преобразуем содержимое заголовка в строку
+  let heading-text = it.body.text
+  let special = heading-text in special-headings
+  let heading-body = if special { upper(heading-text) } else { heading-text }
   
   if special {
-    align(center, heading-body)
+    align(center, [#heading-body])
   } else {
     align(center, [#counter(heading).display() #heading-body])
   }
 }
-
 #show heading.where(level: 2): it => {
   set text(weight: "bold", size: 14pt)
   set par(first-line-indent: 1.25cm, leading: 1.5em, spacing: 12pt)
@@ -151,7 +152,7 @@
 
 #align(center, text(weight: "bold", size: 14pt)[
   Руководство администратора.\
-  Starselor — аддон для Blender
+  Starseilor — аддон для Blender
 ])
 
 #v(180pt)
