@@ -12,7 +12,7 @@
 
 ---
 
-<img src="Starseilor.png" width="450">
+<img src="Images/Starseilor.png" width="450">
 
 ---
 
